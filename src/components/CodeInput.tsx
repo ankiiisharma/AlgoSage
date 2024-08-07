@@ -77,7 +77,7 @@ const CodeInput = () => {
             onChange={(e) => setCode(e.target.value)}
           />
           <button
-            className="mt-4 px-4 py-3 w-3/4 font-bold bg-sky-500 text-white rounded-md flex flex-row items-center justify-center"
+            className="mt-4 px-4 py-3 w-3/4 font-bold bg-sky-500 text-white rounded-md flex flex-row items-center justify-center hover:bg-sky-800 hover:translate-y-1 duration-200"
             onClick={handleSubmit}
           >
             <FaMagnifyingGlassChart className="mr-2" /> Analyse Code!
@@ -92,7 +92,7 @@ const CodeInput = () => {
               </div>
             )}
             {showResult && (
-              <div className="relative flex flex-col items-center bg-white py-[200px] px-8 text-slate-600 tracking-tight rounded-lg shadow-lg hover:bg-sky-100 duration-200 ">
+              <div className="relative w-1/2 h-[420px] flex flex-col items-center bg-white py-[200px] px-8 text-slate-600 tracking-tight rounded-lg shadow-lg hover:bg-sky-100 duration-200 ">
                 <button
                   className="absolute top-4 right-4 text-gray-600"
                   onClick={() => setShowResult(false)}
@@ -102,22 +102,24 @@ const CodeInput = () => {
                     size={24}
                   />
                 </button>
-                <p className="text-2xl font-semibold">
-                  {" "}
-                  <p>
-                    Time Complexity:
-                    <strong className="text-blue-700">
-                      {response.timeComplexity}{" "}
-                    </strong>
-                  </p>
-                  <p>
-                    Space Complexity:{" "}
-                    <strong className="text-blue-700">
-                      {" "}
-                      {response.spaceComplexity}
-                    </strong>
-                  </p>
-                </p>
+                {typeof response === "string" ? (
+                  <p className="text-2xl font-semibold">{response}</p>
+                ) : (
+                  <div>
+                    <p className="text-xl font-semibold">
+                      Time Complexity:{" "}
+                      <strong className="text-blue-700">
+                        {response.timeComplexity}
+                      </strong>
+                    </p>
+                    <p className="text-xl font-semibold">
+                      Space Complexity:{" "}
+                      <strong className="text-blue-700">
+                        {response.spaceComplexity}
+                      </strong>
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </div>
