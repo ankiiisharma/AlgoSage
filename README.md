@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+<div align="center">
+  <br />
+    <a href="https://www.github.com/ankiiisharma/AlgoSage" target="_blank">
+      <img src="https://ik.imagekit.io/ankiiisharma/AlgoSageCOver.png?updatedAt=1723036368695" alt="Project Banner">
+    </a>
+  <br />
+  <br />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <img src="https://skillicons.dev/icons?i=ts,react,express,nodejs,tailwind,firebase" alt="tech-stack" >
 
-Currently, two official plugins are available:
+  <br />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   <div align="center"> <img src="https://ik.imagekit.io/ankiiisharma/logoAlgoSage.png?updatedAt=1723037894924" alt="AlgoSage"> </div>
+   
+  <div align="center">
+    <h2> Demo </h2>
+    <img src="https://ik.imagekit.io/ankiiisharma/AlgoSage.gif?updatedAt=1723039025366" alt="gif"> 
+  </div>
 
-## Expanding the ESLint configuration
+   <div align="center">
+    <b>AlgoSage </b> is a web application designed to streamline the process of analyzing the <b>time</b> and <b>space complexity</b> of your algorithms and code snippets. With a sleek interface and robust backend, AlgoSage enables users to effortlessly paste their code and obtain detailed insights into its computational efficiency. 
+   </div>
+</div >
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Key Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Comprehensive Code Analysis**: Instantly receive detailed reports on the time and space complexity of your code.
+- **Intuitive User Interface**: Enjoy a clean, minimal and user-friendly interface that simplifies interaction and analysis.
+- **Real-Time Results**: Obtain immediate feedback upon code submission, making the analysis process quick and efficient.
+- **Built with Modern Technologies**: built with React.js, NodeJs, ExpressJs,TypeScript, Tailwind CSS, and Firebase.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Feel free to Report Issues and bugs and make contributions!
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- If you find a bug or have suggestions for new features, please open an issue on our GitHub repository. Provide as much detail as possible so we can address it promptly.
+- **Feel Free to Contribute!**
+
+<div align="center">
+  
+<h2> Let's Connect: </h2>
+
+   <br />
+    <a href="https://www.linkedin.com/in/ankiiisharma" target="_blank">
+      <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn">
+    </a>
+    <a href="https://https://twitter.com/heyankiii" target="_blank">
+      <img src="https://skillicons.dev/icons?i=twitter" alt="LinkedIn">
+    </a>
+    <a href="https://https://github.com/heyankiii" target="_blank">
+      <img src="https://skillicons.dev/icons?i=github" alt="LinkedIn">
+    </a>
+</div>
