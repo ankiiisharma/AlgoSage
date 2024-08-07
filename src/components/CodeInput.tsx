@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import gridbg from "../assets/grid.png";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -6,10 +6,15 @@ import { FaMagnifyingGlassChart } from "react-icons/fa6";
 import { FaTimesCircle } from "react-icons/fa";
 import Loading from "./Loading";
 
+interface ResponseData {
+  timeComplexity: string;
+  spaceComplexity: string;
+}
+
 const CodeInput = () => {
   const [code, setCode] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [response, setResponse] = useState<string | null>(null);
+  const [response, setResponse] = useState<string | ResponseData | null>(null);
   const [showResult, setShowResult] = useState<boolean>(false);
 
   const handleSubmit = async () => {
@@ -19,34 +24,30 @@ const CodeInput = () => {
       return;
     }
 
-    // console.log(process.env.REACT_APP_MAINAPI);
-
     setLoading(true);
     setResponse(null);
     setShowResult(false);
 
     try {
       const result = await axios.post(import.meta.env.VITE_MAINAPI, { code });
-
       console.log(result);
 
-      const resultText =
-        result.data.data.candidates[0]?.content?.parts[0]?.text;
-      setResponse(resultText || "An Error Occurred!");
-      console.log(resultText);
-
-      const [timeComplexity, spaceComplexity] = resultText
-        .split("\n")
-        .map((line) => line.trim().replace(/^.*:\s*/, ""));
-
-      setResponse({
-        timeComplexity: timeComplexity || "Not available",
-        spaceComplexity: spaceComplexity || "Not available",
-      });
+      const resultText: string =
+        result.data.data.candidates[0]?.content?.parts[0]?.text ||
+        "An Error Occurred!";
+      setResponse(resultText);
 
       if (resultText === "Enter a Valid Code!") {
         toast.error("Enter a Valid Code!");
       } else {
+        const [timeComplexity, spaceComplexity] = resultText
+          .split("\n")
+          .map((line) => line.trim().replace(/^.*:\s*/, ""));
+
+        setResponse({
+          timeComplexity: timeComplexity || "Not available",
+          spaceComplexity: spaceComplexity || "Not available",
+        });
         setShowResult(true);
       }
     } catch (error) {
@@ -109,13 +110,13 @@ const CodeInput = () => {
                     <p className="text-xl font-semibold">
                       Time Complexity:{" "}
                       <strong className="text-blue-700">
-                        {response.timeComplexity}
+                        {response?.timeComplexity}
                       </strong>
                     </p>
                     <p className="text-xl font-semibold">
                       Space Complexity:{" "}
                       <strong className="text-blue-700">
-                        {response.spaceComplexity}
+                        {response?.spaceComplexity}
                       </strong>
                     </p>
                   </div>

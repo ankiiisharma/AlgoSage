@@ -1,8 +1,8 @@
-import React from "react";
+// import React from "react";
 import Header from "./components/Header";
 import CodeInput from "./components/CodeInput";
-import toasr, { Toaster } from "react-hot-toast";
-import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
+// import Footer from "./components/Footer";
 
 const App = () => {
   return (

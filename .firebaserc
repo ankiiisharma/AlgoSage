@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "authtest-1111",
+    "dev": "authtest-1111"
+  }
+}
