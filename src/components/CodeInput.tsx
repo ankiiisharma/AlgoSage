@@ -29,7 +29,10 @@ const CodeInput = () => {
     setShowResult(false);
 
     try {
-      const result = await axios.post(import.meta.env.VITE_MAINAPI, { code });
+      const result = await axios.post(
+        "https://algo-sage-backend.vercel.app/api/analyse",
+        { code }
+      );
       console.log(result);
 
       const resultText: string =
