@@ -72,7 +72,7 @@ const CodeInput = () => {
           alt="bg-grid"
         />
 
-        <div className="flex flex-col items-center z-10 p-2">
+        <div className="flex flex-col items-center z-10 p-2 ">
           <textarea
             id="codeare"
             className="w-3/4 h-[420px] p-2 bg-grad02-gradient border border-slate-300 rounded-lg tracking-tight"
