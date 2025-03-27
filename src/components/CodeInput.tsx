@@ -29,7 +29,8 @@ const CodeInput = () => {
 
     try {
       const backendUrl =
-        import.meta.env.VITE_BACKEND_URL || "http://localhost:4000/api/analyse";
+        import.meta.env.VITE_BACKEND_URL ||
+        "https://algo-sage-backend.vercel.app/api/analyse";
 
       const result = await axios.post(backendUrl, { code });
       const resultText: string = result.data.data || "An Error Occurred!";
